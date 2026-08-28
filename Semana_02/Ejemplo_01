@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<title> Titulo de pagina </title>
+	</head>
+
+	<body>
+		<h1> Hola mundo </h1>
+		
+		<h2 style="color:blue"> Bienvenido a la primera página web</h2>
+		
+		<h3 style="text-align: center; color:red"> Esto es otro titulo h3 </h3>
+		
+		<p style="color:purple; text-align: right; font-family:Verdana"> 
+			Este es un parrafo de ejemplo con etiqueta individual
+			Este es un parrafo de ejemplo con etiqueta individual
+			Este es un parrafo de ejemplo con etiqueta individual
+			Este es un parrafo de ejemplo con etiqueta individual
+		</p>
+		
+		<h3> Esto es otro titulo h3 </h3>
+		
+		<p> 
+			Este es otro parrafo nuevo
+			Este es otro parrafo nuevo
+			Este es otro parrafo nuevo
+			Este es otro parrafo nuevo
+		</p>
+		
+		<p> 
+			Este es otro parrafo nuevo
+			Este es otro parrafo nuevo
+			Este es otro parrafo nuevo
+			Este es otro parrafo nuevo
+		</p>
+		
+	</body>
+	
+</html>

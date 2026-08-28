@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<!--Asignacion -->
+		<title> Titulo de pagina </title>
+		<style>
+			h3 { 
+			color:red;
+			text-align: center;
+			font-family: Comic Sans MS
+			}
+			
+			p{ 
+				font-family: Lucida Mendwriting
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<h3> Esto es un encabezado h3 </h3>
+		<p> 
+			Esto es un parrafo, Esto es un parrafo,
+			Esto es un parrafo, Esto es un parrafo
+		</p>
+		
+		<h3> Otro encabezado h3 </h3>
+		<p> 
+			Esto es un parrafo, Esto es un parrafo,
+			Esto es un parrafo, Esto es un parrafo
+		</p>
+		
+		<h3> Tercer encabezado h3 </h3>
+		
+		<p> 
+			Esto es un nuevo parrafo,
+			Esto es un nuevo parrafo,
+			Esto es un nuevo parrafo,
+		</p>
+		
+	</body>
+	
+</html>
