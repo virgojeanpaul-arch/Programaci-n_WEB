@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Operaciones Básicas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .resultados {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+        .resultados p {
+            margin: 5px 0;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Calculadora Básica</h2>
+
+    <div class="form-group">
+        <label for="num1">Primer Número:</label>
+        <input type="number" id="num1" step="any" placeholder="Ingrese el primer número">
+    </div>
+
+    <div class="form-group">
+        <label for="num2">Segundo Número:</label>
+        <input type="number" id="num2" step="any" placeholder="Ingrese el segundo número">
+    </div>
+
+    <button onclick="calcular()">Calcular</button>
+
+    <div class="resultados" id="seccionResultados">
+        <p><strong>Adición (+):</strong> <span id="resSuma">-</span></p>
+        <p><strong>Sustracción (-):</strong> <span id="resResta">-</span></p>
+        <p><strong>Multiplicación (×):</strong> <span id="resMultiplicacion">-</span></p>
+        <p><strong>División (÷):</strong> <span id="resDivision">-</span></p>
+    </div>
+
+    <script>
+        function calcular() {
+            // Obtenemos los valores de los inputs y los convertimos a números de punto flotante
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+
+            // Validamos que se hayan ingresado números válidos
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Por favor, ingrese dos números reales válidos.");
+                return;
+            }
+
+            // Realizamos las operaciones aritméticas
+            const suma = num1 + num2;
+            const resta = num1 - num2;
+            const multiplicacion = num1 * num2;
+            
+            // Manejamos la validación de división entre cero
+            let division;
+            if (num2 === 0) {
+                division = "No es posible dividir entre cero";
+            } else {
+                division = num1 / num2;
+            }
+
+            // Renderizamos los resultados en el DOM
+            document.getElementById('resSuma').textContent = suma;
+            document.getElementById('resResta').textContent = resta;
+            document.getElementById('resMultiplicacion').textContent = multiplicacion;
+            document.getElementById('resDivision').textContent = division;
+        }
+    </script>
+
+</body>
+</html>

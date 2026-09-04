@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<title> Javascript Ejem 1 </title>
+	</head>
+	
+	<body>
+		<p id="demo"> </p>
+		<p id="demo2"> </p>
+		<p id="demo3"> </p>
+		<p id="demo4"> </p>
+		
+		<script>
+			<!--declarar variable-->
+			let nombre = "Aquí mi nombre";
+			let genero = "M";
+			let edad = 20;
+			let tallaCM = 180.25;
+			let esPeruano = true;
+			let tieneAhorros = null;
+			const pi = 3.1416;
+			
+			let alumno = {
+				codigo : 123456,
+				escuela : "Ingenieria",
+				notaFinal : 19,
+				ciclo : 3,
+			}
+			
+			let amigos = ["Fulano", "Hugo", "Angelo"];
+			let notas = [12.25, 15.75, 18.50];
+			
+			//uso de metodos
+			//uso de Procedimientos
+			function saludar() {
+				console.log("Hola mundo, esto es Javascript");
+			}
+			
+			
+			//Uso de funcion
+			
+			function saludar2(nombre) {
+				alert("Hola querido Paul " + nombre);
+			}
+			
+			let salida = "";
+			salida = "\n Informacion de usuario: " + 
+					"\n Nombre: " + nombre +  
+					"\n Genero: " + edad + 
+					"\n Edad: " + edad + 
+					"\n Talla en CM: " + tallaCM +
+					"\n Valor de PI: " + pi; 
+					
+					
+			
+			document.getElementById("demo").innerHTML = nombre;
+			document.getElementById("demo2").innerHTML = tallaCM;	
+			document.getElementById("demo3").innerHTML = "Ahorros: " + tieneAhorros;
+			
+			document.getElementById("demo4").innerHTML = salida;
+			
+			
+		</script>
+		
+		<p id="demo"> </p>
+	
+	</body>
+	
+</html>
