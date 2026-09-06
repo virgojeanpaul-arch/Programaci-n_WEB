@@ -1,0 +1,41 @@
+<html>
+	<head>
+		
+	</head>
+	
+	<body>
+		<span id="sp_datos" style="white-space: pre-line;" >  </span>
+		
+		<script>
+			//estructuras de datos en javascript
+			const estudiante = {
+			  codigo: "2026001",
+			  nombre: "Ana",
+			  carrera: "Ingeniería de Sistemas",
+			  promedio: 16
+			};
+
+			console.log("Código:", estudiante.codigo);
+			console.log("Nombre:", estudiante.nombre);
+			console.log("Carrera:", estudiante.carrera);
+			console.log("Promedio:", estudiante.promedio);
+			
+			const mascota = {
+				nombre : "Oso",
+				edad : 5,
+				raza : "chusca",
+				peso : 5.75
+			};
+			
+			var salida = "Reporte de mascota: " +
+					"\n Nombre: " +mascota.nombre +
+					"\n Edad: " + mascota.edad +
+					"\n Raza: " + mascota.raza +
+					"\n Peso: " + mascota.peso;
+					
+			document.getElementById("sp_datos").textContent = salida;
+			
+		</script>
+	</body>
+
+</html>

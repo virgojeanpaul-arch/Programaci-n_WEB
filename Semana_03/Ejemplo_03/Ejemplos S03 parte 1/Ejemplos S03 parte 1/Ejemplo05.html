@@ -1,0 +1,44 @@
+.<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+		<title> Ejemplos de estructuras iterativsa	</title>
+
+	
+	</head>
+	
+	<body>
+		<h2> Ejemplo de estructuras iterativas     </h2>
+		<h3> Uso de iterativo for </h3>
+		<p> Abre el panel de consola: CTRL + SHIFT + J o F12</p>
+
+	
+	<script>
+		//uso del for
+		
+		let Tn;
+		let salida = "";
+		
+		//impresion de los pares
+		console.log("\n Impresion de los primeros 10 pares: ");
+		for(let i=1; i<=10; i=i+1) {
+			Tn = 2*i;
+		   salida = salida + ", " + Tn;
+		}		
+		console.log(", " + salida );
+				
+				
+		console.log("\n Impresion de los primeros impares : ");		
+		salida = "";
+		for( let i=1; i<=15; i++){
+			Tn = 2*i-1;
+			salida = salida + i + "°) " + Tn + "\n" ;			
+		}
+		console.log( salida ) ;
+		
+	</script>
+	
+	</body>
+
+</html>

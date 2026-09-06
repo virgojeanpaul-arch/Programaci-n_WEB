@@ -1,0 +1,166 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+.contenedor {
+  width: min(1000px, 92%);
+  margin: 40px auto;
+}
+
+.encabezado {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.encabezado h1 {
+  margin-bottom: 8px;
+  color: #0f172a;
+}
+
+.encabezado p {
+  margin: 0;
+  color: #64748b;
+}
+
+.panel {
+  background: white;
+  padding: 28px;
+  margin-bottom: 24px;
+  border-radius: 14px;
+  box-shadow: 0 5px 20px rgba(15, 23, 42, 0.08);
+}
+
+.formulario {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  align-items: end;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.campo label {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.campo input {
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+}
+
+.campo input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.boton {
+  grid-column: 1 / -1;
+  border: 0;
+  border-radius: 8px;
+  padding: 13px 20px;
+  background: #2563eb;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.boton:hover {
+  background: #1d4ed8;
+}
+
+.mensaje {
+  margin-top: 16px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  display: none;
+}
+
+.mensaje.exito,
+.mensaje.error {
+  display: block;
+}
+
+.mensaje.exito {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.mensaje.error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.resultado {
+  background: #eff6ff;
+  border-left: 5px solid #2563eb;
+  padding: 16px 20px;
+  border-radius: 8px;
+}
+
+.resultado h3 {
+  margin-top: 0;
+}
+
+.tabla-contenedor {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 13px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+  background: #f8fafc;
+  color: #334155;
+}
+
+.estado {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.aprobado {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.desaprobado {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+@media (max-width: 700px) {
+  .formulario {
+    grid-template-columns: 1fr;
+  }
+
+  .panel {
+    padding: 20px;
+  }
+}

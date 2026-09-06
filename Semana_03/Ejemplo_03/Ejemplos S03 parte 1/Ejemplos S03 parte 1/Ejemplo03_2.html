@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+		<title> Ejemplos uso javascript	</title>
+
+	
+	</head>
+	
+	<body>
+		<h2> Ejemplo . * * *    </h2>
+		<p> Abre el panel de consola: CTRL + SHIFT + J o F12</p>
+	
+	</body>
+	
+	<script>
+	 /* programa que determina si un triangulo de 
+	 lados conocidos existe, ademas de su perimetro y area */
+	 
+	 let a=1, b=1, c=1.4142; 	//lados del triangulo
+	 let existeTriangulo = false;
+	 let c1 = false, c2 = false, c3 = false;
+	 let sp, perimetro, area;
+	 let salida = "";
+	 
+	 perimetro = a + b + c;
+	 sp = perimetro / 2;
+	 area = Math.sqrt(sp*(sp-a)*(sp-b)*(sp-c));
+	 
+	 //determinar la existencia del triangulo
+	 c1 = Math.abs(b-c) < a;
+	 c2 = Math.abs(a-c) < b;
+	 c3 = Math.abs(a-b) < c;
+	 
+	if ( c1==true && c2== true && c3== true )
+		existeTriangulo = true;
+	else
+		existeTriangulo = false;
+		
+	 
+	 
+	 if (existeTriangulo){
+	 
+		 salida = "*** RESULTADOS *** " + 
+				"\n El triangulo existe? : " + existeTriangulo + 
+				"\n Area: " + area + 
+				"\n Perimetro: " + perimetro;
+				
+		 
+	 } else {
+	 
+		salida = "ERROR: LOS LADOS INGRESADOS NO " +
+				" CORRESPONDEN A UN TRIANGULO!";
+	 }
+	 
+	 console.log( salida );
+	 </script>
+	 
+	
+	</script>
+
+</html>

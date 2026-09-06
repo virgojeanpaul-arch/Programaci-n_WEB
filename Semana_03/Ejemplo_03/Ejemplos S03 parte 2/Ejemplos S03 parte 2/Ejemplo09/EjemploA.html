@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo 1 - JavaScript</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      padding: 30px;
+    }
+
+    .card {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,.15);
+    }
+
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    #resultado {
+      margin-top: 20px;
+      padding: 15px;
+      background: #e0f2fe;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>Área de un rectángulo</h1>
+
+    <!-- INGRESO DE DATOS -->
+    <input type="number" id="base" placeholder="Ingrese la base">
+    <input type="number" id="altura" placeholder="Ingrese la altura">
+
+    <button onclick="calcularArea()">Calcular</button>
+
+    <!-- SALIDA -->
+    <div id="resultado"></div>
+  </div>
+
+  <script>
+    function calcularArea() {
+
+      // 1. INGRESO
+      const base = Number(document.getElementById("base").value);
+      const altura = Number(document.getElementById("altura").value);
+
+      // 2. PROCESAMIENTO
+      const area = base * altura;
+
+      // 3. SALIDA
+      document.getElementById("resultado").textContent =
+        `El área del rectángulo es: ${area}`;
+    }
+  </script>
+
+</body>
+</html>

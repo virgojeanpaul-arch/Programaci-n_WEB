@@ -1,0 +1,1 @@
+Implementa un programa con html, css y javascript que permita el ingreso de 2 numeros reales y calcule la suma, resta, producto y división, el programa muestra los botones con imágenes calcular, limpiar casillas y ver creditos de autor, mostrará también una casilla de texto multilínea en donde se verá el registro de las operaciones realizadas

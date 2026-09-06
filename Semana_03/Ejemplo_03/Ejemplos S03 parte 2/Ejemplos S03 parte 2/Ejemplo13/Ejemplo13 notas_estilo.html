@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promedio y Rendimiento Académico</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #dbeafe, #e0f2fe);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .contenedor {
+            width: 100%;
+            max-width: 700px;
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e3a8a;
+            margin-top: 0;
+        }
+
+        .descripcion {
+            text-align: center;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .entrada {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 7px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            font-size: 17px;
+            border: 2px solid #bfdbfe;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        input[type="number"]:focus {
+            border-color: #2563eb;
+        }
+
+        .botones {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 25px 0;
+        }
+
+        .boton {
+            border: none;
+            border-radius: 10px;
+            padding: 10px 18px;
+            cursor: pointer;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+
+        .boton:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        .boton img {
+            width: 25px;
+            height: 25px;
+        }
+
+        .calcular {
+            background-color: #2563eb;
+        }
+
+        .limpiar {
+            background-color: #dc2626;
+        }
+
+        .creditos {
+            background-color: #16a34a;
+        }
+
+        .resultado {
+            display: none;
+            margin-top: 20px;
+            padding: 18px;
+            border-radius: 10px;
+            background-color: #eff6ff;
+            border-left: 5px solid #2563eb;
+        }
+
+        .resultado p {
+            margin: 8px 0;
+            font-size: 17px;
+        }
+
+        .aprobado {
+            color: #15803d;
+            font-weight: bold;
+        }
+
+        .desaprobado {
+            color: #dc2626;
+            font-weight: bold;
+        }
+
+        .rendimiento {
+            font-weight: bold;
+        }
+
+        h2 {
+            color: #1e3a8a;
+            font-size: 20px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        #registro {
+            width: 100%;
+            height: 220px;
+            resize: vertical;
+            padding: 12px;
+            border: 2px solid #bfdbfe;
+            border-radius: 8px;
+            background-color: #f8fafc;
+            font-family: "Courier New", monospace;
+            font-size: 14px;
+            color: #1e293b;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        @media (max-width: 500px) {
+            .contenedor {
+                padding: 20px;
+            }
+
+            .boton {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="contenedor">
+
+        <h1>Promedio y Rendimiento Académico</h1>
+
+        <p class="descripcion">
+            Ingrese las tres notas para calcular el promedio,
+            la condición y el rendimiento.
+        </p>
+
+        <div class="entrada">
+            <label for="nota1">Nota 1:</label>
+            <input type="number" id="nota1" min="0" max="20" step="0.01"
+                   placeholder="Ingrese la primera nota">
+        </div>
+
+        <div class="entrada">
+            <label for="nota2">Nota 2:</label>
+            <input type="number" id="nota2" min="0" max="20" step="0.01"
+                   placeholder="Ingrese la segunda nota">
+        </div>
+
+        <div class="entrada">
+            <label for="nota3">Nota 3:</label>
+            <input type="number" id="nota3" min="0" max="20" step="0.01"
+                   placeholder="Ingrese la tercera nota">
+        </div>
+
+        <div class="botones">
+
+            <button class="boton calcular" onclick="calcular()">
+                <img src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png"
+                     alt="Calcular">
+                Calcular
+            </button>
+
+            <button class="boton limpiar" onclick="limpiar()">
+                <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png"
+                     alt="Limpiar">
+                Limpiar
+            </button>
+
+            <button class="boton creditos" onclick="verCreditos()">
+                <img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png"
+                     alt="Créditos">
+                Créditos
+            </button>
+
+        </div>
+
+        <div id="resultado" class="resultado">
+            <p id="promedio"></p>
+            <p id="condicion"></p>
+            <p id="rendimiento"></p>
+        </div>
+
+        <h2>Registro de operaciones</h2>
+
+        <textarea id="registro"
+                  readonly
+                  placeholder="Aquí aparecerá el registro de las operaciones realizadas..."></textarea>
+
+        <footer>
+            Sistema de evaluación académica
+        </footer>
+
+    </main>
+
+    <script>
+
+        function calcular() {
+
+            // Obtener las notas
+            const nota1 = parseFloat(document.getElementById("nota1").value);
+            const nota2 = parseFloat(document.getElementById("nota2").value);
+            const nota3 = parseFloat(document.getElementById("nota3").value);
+
+            // Validar que las notas sean números
+            if (isNaN(nota1) || isNaN(nota2) || isNaN(nota3)) {
+                alert("Por favor, ingrese las tres notas.");
+                return;
+            }
+
+            // Validar rango de notas
+            if (
+                nota1 < 0 || nota1 > 20 ||
+                nota2 < 0 || nota2 > 20 ||
+                nota3 < 0 || nota3 > 20
+            ) {
+                alert("Las notas deben estar entre 0 y 20.");
+                return;
+            }
+
+            // Calcular promedio
+            const promedio = (nota1 + nota2 + nota3) / 3;
+
+            // Determinar condición
+            let condicion;
+
+            if (promedio >= 12) {
+                condicion = "APROBADO";
+            } else {
+                condicion = "DESAPROBADO";
+            }
+
+            // Determinar rendimiento
+            let rendimiento;
+
+            if (promedio < 12) {
+                rendimiento = "DEFICIENTE";
+            } else if (promedio < 16) {
+                rendimiento = "REGULAR";
+            } else {
+                rendimiento = "SOBRESALIENTE";
+            }
+
+            // Mostrar resultados
+            const resultado = document.getElementById("resultado");
+            const promedioTexto = document.getElementById("promedio");
+            const condicionTexto = document.getElementById("condicion");
+            const rendimientoTexto = document.getElementById("rendimiento");
+
+            resultado.style.display = "block";
+
+            promedioTexto.innerHTML =
+                "<strong>Promedio:</strong> " + promedio.toFixed(2);
+
+            condicionTexto.innerHTML =
+                "<strong>Condición:</strong> " +
+                "<span class='" +
+                (condicion === "APROBADO" ? "aprobado" : "desaprobado") +
+                "'>" + condicion + "</span>";
+
+            rendimientoTexto.innerHTML =
+                "<strong>Rendimiento:</strong> " +
+                "<span class='rendimiento'>" + rendimiento + "</span>";
+
+            // Fecha y hora de la operación
+            const ahora = new Date();
+            const fecha = ahora.toLocaleString("es-PE");
+
+            // Crear registro
+            const nuevoRegistro =
+                "============================================\n" +
+                "Fecha: " + fecha + "\n" +
+                "Nota 1: " + nota1.toFixed(2) + "\n" +
+                "Nota 2: " + nota2.toFixed(2) + "\n" +
+                "Nota 3: " + nota3.toFixed(2) + "\n" +
+                "Promedio: " + promedio.toFixed(2) + "\n" +
+                "Condición: " + condicion + "\n" +
+                "Rendimiento: " + rendimiento + "\n" +
+                "============================================\n";
+
+            // Agregar operación al historial
+            const registro = document.getElementById("registro");
+            registro.value += nuevoRegistro;
+
+            // Desplazar el registro hasta el final
+            registro.scrollTop = registro.scrollHeight;
+        }
+
+
+        function limpiar() {
+
+            // Limpiar las casillas
+            document.getElementById("nota1").value = "";
+            document.getElementById("nota2").value = "";
+            document.getElementById("nota3").value = "";
+
+            // Ocultar resultados
+            document.getElementById("resultado").style.display = "none";
+
+            // Colocar el cursor en la primera casilla
+            document.getElementById("nota1").focus();
+        }
+
+
+        function verCreditos() {
+
+            alert(
+                "CRÉDITOS\n\n" +
+                "Programa de Promedio y Rendimiento Académico\n" +
+                "Autor: Tu nombre aquí\n" +
+                "Curso: Programación Web\n" +
+                "Tecnologías utilizadas:\n" +
+                "HTML + CSS + JavaScript"
+            );
+        }
+
+    </script>
+
+</body>
+</html>

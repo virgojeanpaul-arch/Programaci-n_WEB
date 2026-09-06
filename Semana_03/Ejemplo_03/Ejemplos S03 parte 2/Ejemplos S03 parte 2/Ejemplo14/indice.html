@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi formulario de datos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="browser-window">
+    <div class="browser-tab">
+      <span class="file-icon"></span>
+      <span>Mi formulario de datos</span>
+      <div class="window-buttons">
+        <span></span><span></span><span class="active"></span>
+      </div>
+    </div>
+
+    <div class="browser-toolbar">
+      <div class="navigation">
+        <span class="nav-arrow">◀</span>
+        <span class="nav-arrow">▶</span>
+        <span class="reload">↻</span>
+      </div>
+      <div class="address-bar">
+        <span class="address-icon"></span>
+        <span>https://www.draw.io</span>
+      </div>
+    </div>
+
+    <main class="content">
+      <section class="form-area">
+        <div class="form-fields">
+          <div class="field-row">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" type="text" autocomplete="name">
+          </div>
+
+          <div class="field-row">
+            <label for="direccion">Dirección</label>
+            <input id="direccion" type="text" autocomplete="street-address">
+          </div>
+
+          <div class="field-row">
+            <label for="correo">correo</label>
+            <input id="correo" type="email" autocomplete="email">
+          </div>
+
+          <div class="options-row">
+            <fieldset>
+              <legend>Intereses</legend>
+              <label class="check-option">
+                <input type="checkbox" name="intereses" value="Musica">
+                <span class="fake-check"></span>Musica
+              </label>
+              <label class="check-option">
+                <input type="checkbox" name="intereses" value="Cine">
+                <span class="fake-check"></span>Cine
+              </label>
+              <label class="check-option">
+                <input type="checkbox" name="intereses" value="Teatro">
+                <span class="fake-check"></span>Teatro
+              </label>
+              <label class="check-option">
+                <input type="checkbox" name="intereses" value="Deportes">
+                <span class="fake-check"></span>Deportes
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Estado civil</legend>
+              <label class="radio-option">
+                <input type="radio" name="estadoCivil" value="Soltero">
+                <span class="fake-radio"></span>Soltero
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="estadoCivil" value="Casado">
+                <span class="fake-radio"></span>Casado
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="estadoCivil" value="Viudo">
+                <span class="fake-radio"></span>Viudo
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="estadoCivil" value="Divorciado">
+                <span class="fake-radio"></span>Divorciado
+              </label>
+            </fieldset>
+          </div>
+
+          <fieldset class="gender">
+            <legend>Género:</legend>
+            <label class="radio-option">
+              <input type="radio" name="genero" value="Masculino">
+              <span class="fake-radio"></span>Masculino
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="genero" value="Femenino">
+              <span class="fake-radio"></span>Femenino
+            </label>
+          </fieldset>
+        </div>
+
+        <div class="buttons">
+          <button id="btnMostrar" type="button">
+            <img alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M12 5c5.5 0 9.7 4.4 11 7-1.3 2.6-5.5 7-11 7S2.3 14.6 1 12C2.3 9.4 6.5 5 12 5zm0 2C8.7 7 5.7 9.3 3.4 12 5.7 14.7 8.7 17 12 17s6.3-2.3 8.6-5C18.3 9.3 15.3 7 12 7zm0 2.5A2.5 2.5 0 1 1 12 14a2.5 2.5 0 0 1 0-4.5z'/%3E%3C/svg%3E">
+            Mostrar datos
+          </button>
+
+          <button id="btnLimpiar" type="button">
+            <img alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M6 7h12l-1 14H7L6 7zm3-4h6l1 2h4v2H4V5h4l1-2zm0 7h2v8H9v-8zm4 0h2v8h-2v-8z'/%3E%3C/svg%3E">
+            Limpiar casillas
+          </button>
+
+          <button id="btnCreditos" type="button">
+            <img alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='white'/%3E%3Cpath fill='%23279cf2' d='M11 10h2v7h-2zm0-4h2v2h-2z'/%3E%3C/svg%3E">
+            Ver créditos
+          </button>
+        </div>
+
+        <section class="output-section">
+          <h2>DATOS INGRESADOS</h2>
+          <div id="salida" class="output-box">
+            <span class="output-placeholder">Los datos ingresados aparecerán aquí.</span>
+          </div>
+
+          <div class="image-placeholder" aria-label="Área de imagen">
+            <div class="placeholder-diagonal one"></div>
+            <div class="placeholder-diagonal two"></div>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

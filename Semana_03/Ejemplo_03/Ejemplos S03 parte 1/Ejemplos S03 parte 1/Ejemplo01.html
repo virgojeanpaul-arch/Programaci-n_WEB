@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+		<title> Ejemplos uso javascript	</title>
+
+	
+	</head>
+	
+	<body>
+		<h2> Ejemplo 1. Variables numericas  </h2>
+		<p> Abre el panel de consola: CTRL + SHIFT + J o F12</p>
+		
+		<script>
+			//declaramor e inicializamos variables
+			let edad = 25;		//entero
+			let precio = 99.90;	//decimal			
+			let usuario = "Alejandro";	//cadena
+			let seccion = 'B';		//caracter
+			let esPeruano = true;	//booleano
+			let salida = "";		//cadena
+						
+			
+			//concatenando la variable de cadena: salida
+			salida = usuario + " dice: " + 
+					"\n Edad: " + edad + 
+					"\n Precio: " + precio +
+					"\n Nombre: " + usuario + 
+					"\n Seccion: " + seccion + 
+					"\n Es peruano?: " + esPeruano; 
+					 
+			//muestra salida en un cuadro de dialogo flotante
+			alert( salida );
+			
+			//se imprime salida en consola de pagina
+			console.log( salida );
+			
+			
+		</script>	
+	</body>
+
+</html>

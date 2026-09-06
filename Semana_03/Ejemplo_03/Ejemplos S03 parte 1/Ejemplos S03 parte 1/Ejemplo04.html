@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+		<title> Ejemplos uso javascript	</title>
+
+	
+	</head>
+	
+	<body>
+		<h2> Ejemplo 4. Estructura condicional  </h2>
+		<p> Abre el panel de consola: CTRL + SHIFT + J o F12</p>
+		
+	<script>	
+		//condicional doble
+		let edad1= 16;
+
+		if(edad1 < 18){
+		   console.log("Menor de edad");
+		}else{
+		   console.log("Mayor de edad");
+		}
+		
+		//condicional multiple		
+		let prom = 12;
+		let rend = "";
+		if ( prom > 0 && prom < 12 )
+			rend = "deficiente";
+		if ( prom >= 12 && prom < 15 )
+			rend = "regular";
+		if ( prom >= 15 && prom < 17 )
+			rend = "bueno";
+		if ( prom >= 17 && prom <= 20 )
+			rend = "sobresaliente ";			
+		console.log("Prom= " + prom + ", Rend= " + rend);	
+			
+		//condicional anidado
+		let edad = 98;
+		let rango = "";
+		if( edad > 0 ){
+			rango = "niño";
+			if ( edad > 12 ){
+				rango = "adolescente";
+				if ( edad > 25 ){
+					rango = "joven";
+					if ( edad > 40 ){
+						rango = "adulto";
+						if( edad > 65 ) {
+							rango = "adulto mayor";
+							if (edad > 80) {
+								rango = "A un paso del más allá..";
+							}
+						}
+					}
+				}
+			}
+		}
+		console.log( "Rango edad: " + rango );
+		
+		
+
+	</script>
+		
+	</body>
+
+</html>

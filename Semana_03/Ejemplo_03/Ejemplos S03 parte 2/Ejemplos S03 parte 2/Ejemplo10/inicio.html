@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Estudiantes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="contenedor">
+    <header class="encabezado">
+      <h1>Registro de Estudiantes</h1>
+      <p>Formulario de ingreso y generación de datos usando la clase <strong>Estudiante</strong>.</p>
+    </header>
+
+    <section class="panel">
+      <h2>Ingreso de datos</h2>
+
+      <form id="formEstudiante" class="formulario">
+        <div class="campo">
+          <label for="nombre">Nombre completo</label>
+          <input id="nombre" type="text" placeholder="Ej. María López" required>
+        </div>
+
+        <div class="campo">
+          <label for="codigo">Código</label>
+          <input id="codigo" type="text" placeholder="Ej. 2026003" required>
+        </div>
+
+        <div class="campo">
+          <label for="promedio">Promedio (0 - 20)</label>
+          <input id="promedio" type="number" min="0" max="20" step="0.1" placeholder="Ej. 15" required>
+        </div>
+
+        <button class="boton" type="submit">Generar datos</button>
+      </form>
+
+      <div id="mensaje" class="mensaje"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Salida de datos</h2>
+      <div id="salida">
+        <p>Ingrese un estudiante para visualizar los datos generados.</p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Listado de estudiantes</h2>
+      <div class="tabla-contenedor">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Nombre</th>
+              <th>Código</th>
+              <th>Promedio</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody id="tablaEstudiantes"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="script01.js"></script>
+</body>
+</html>

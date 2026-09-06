@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi formulario de datos</title>
+
+<!-- Iconos -->
+https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#111;
+    color:white;
+    display:flex;
+    justify-content:center;
+    padding:20px;
+}
+
+.contenedor{
+    width:900px;
+    border:1px solid #666;
+    padding:30px;
+    background:#000;
+}
+
+h1{
+    margin-bottom:25px;
+    color:#ddd;
+    font-size:28px;
+}
+
+.formulario{
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    gap:30px;
+}
+
+.izquierda label{
+    display:inline-block;
+    width:90px;
+    margin-bottom:15px;
+}
+
+input[type="text"],
+input[type="email"]{
+    width:350px;
+    padding:6px;
+    background:#111;
+    border:1px solid #666;
+    color:white;
+}
+
+.grupos{
+    display:flex;
+    gap:30px;
+    margin-top:15px;
+    margin-bottom:20px;
+}
+
+fieldset{
+    width:170px;
+    border:1px solid #666;
+    padding:10px;
+}
+
+fieldset legend{
+    padding:0 5px;
+}
+
+fieldset label{
+    display:block;
+    margin:10px 0;
+    width:auto;
+}
+
+.genero{
+    margin-top:15px;
+    margin-bottom:20px;
+}
+
+.genero label{
+    margin-right:30px;
+}
+
+.botones{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+    align-items:center;
+}
+
+button{
+    width:180px;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#2d97f3;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#1c7cd1;
+}
+
+button i{
+    margin-right:8px;
+}
+
+.salida{
+    margin-top:30px;
+}
+
+.salida h3{
+    margin-bottom:10px;
+}
+
+#resultado{
+    width:100%;
+    height:180px;
+    background:#050505;
+    border:1px solid #666;
+    color:#00ff7f;
+    padding:10px;
+    overflow:auto;
+    white-space:pre-line;
+}
+</style>
+</head>
+
+<body>
+
+<div class="contenedor">
+    <h1><i class="fa-regular fa-file"></i> Mi formulario de datos</h1>
+
+    <div class="formulario">
+
+        <div class="izquierda">
+
+            <div>
+                <label>Nombre</label>
+                <input type="text" id="nombre">
+            </div>
+
+            <div>
+                <label>Dirección</label>
+                <input type="text" id="direccion">
+            </div>
+
+            <div>
+                <label>Correo</label>
+                <input type="email" id="correo">
+            </div>
+
+            <div class="grupos">
+
+                <fieldset>
+                    <legend>Intereses</legend>
+
+                    <label><input type="checkbox" value="Música"> Música</label>
+                    <label><input type="checkbox" value="Cine"> Cine</label>
+                    <label><input type="checkbox" value="Teatro"> Teatro</label>
+                    <label><input type="checkbox" value="Deportes"> Deportes</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Estado civil</legend>
+
+                    <label><input type="radio" name="estado" value="Soltero"> Soltero</label>
+                    <label><input type="radio" name="estado" value="Casado"> Casado</label>
+                    <label><input type="radio" name="estado" value="Viudo"> Viudo</label>
+                    <label><input type="radio" name="estado" value="Divorciado"> Divorciado</label>
+                </fieldset>
+
+            </div>
+
+            <div class="genero">
+                <strong>Género:</strong>
+
+                <label>
+                    <input type="radio" name="genero" value="Masculino">
+                    Masculino
+                </label>
+
+                <label>
+                    <input type="radio" name="genero" value="Femenino">
+                    Femenino
+                </label>
+            </div>
+
+        </div>
+
+        <div class="botones">
+
+            <button onclick="mostrarDatos()">
+                <i class="fa-solid fa-eye"></i>
+                Mostrar datos
+            </button>
+
+            <button onclick="limpiarFormulario()">
+                <i class="fa-solid fa-eraser"></i>
+                Limpiar casillas
+            </button>
+
+            <button onclick="verCreditos()">
+                <i class="fa-solid fa-circle-info"></i>
+                Ver créditos
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="salida">
+        <h3>DATOS INGRESADOS</h3>
+
+        <div id="resultado"></div>
+    </div>
+
+</div>
+
+<script>
+
+function mostrarDatos(){
+
+    let nombre = document.getElementById("nombre").value;
+    let direccion = document.getElementById("direccion").value;
+    let correo = document.getElementById("correo").value;
+
+    let intereses = [];
+    document.querySelectorAll('input[type="checkbox"]:checked')
+        .forEach(chk => intereses.push(chk.value));
+
+    let estado = document.querySelector('input[name="estado"]:checked');
+    estado = estado ? estado.value : "No seleccionado";
+
+    let genero = document.querySelector('input[name="genero"]:checked');
+    genero = genero ? genero.value : "No seleccionado";
+
+    document.getElementById("resultado").innerHTML =
+        "Nombre: " + nombre + "<br>" +
+        "Dirección: " + direccion + "<br>" +
+        "Correo: " + correo + "<br>" +
+        "Intereses: " + (intereses.length ? intereses.join(", ") : "Ninguno") + "<br>" +
+        "Estado civil: " + estado + "<br>" +
+        "Género: " + genero;
+}
+
+function limpiarFormulario(){
+
+    document.getElementById("nombre").value = "";
+    document.getElementById("direccion").value = "";
+    document.getElementById("correo").value = "";
+
+    document.querySelectorAll('input[type="checkbox"]')
+        .forEach(chk => chk.checked = false);
+
+    document.querySelectorAll('input[type="radio"]')
+        .forEach(rad => rad.checked = false);
+
+    document.getElementById("resultado").innerHTML = "";
+}
+
+function verCreditos(){
+
+    let ventana = window.open("", "_blank");
+
+    ventana.document.write(`
+        <html>
+        <head>
+            <title>Créditos</title>
+            <style>
+                body{
+                    font-family:Arial;
+                    text-align:center;
+                    background:#111;
+                    color:white;
+                    padding-top:80px;
+                }
+                h1{
+                    color:#2d97f3;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>Créditos</h1>
+            <p><strong>Autor:</strong> Alejandro Manuel Salazar Yabar</p>
+            <p>Aplicación desarrollada con HTML, CSS y JavaScript.</p>
+        </body>
+        </html>
+    `);
+
+    ventana.document.close();
+}
+
+</script>
+
+</body>
+</html>

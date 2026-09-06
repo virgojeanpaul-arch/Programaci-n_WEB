@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+		<title> Ejemplos uso javascript	</title>
+
+	
+	</head>
+	
+	<body>
+		<h2> Ejemplo 2. Tipos de datos  </h2>
+		<p> Abre el panel de consola: CTRL + SHIFT + J o F12</p>
+		
+		<p id="p_salida">  </p>
+			<hr>
+		<span id="sp_salida" style="white-space: pre-line;">  </span>
+			<hr>
+		<div id="dv_salida"> </div>
+		
+		<hr><hr>
+		
+		<p id="p_salida2">  </p>
+			<hr>
+		<span id="sp_salida2" style="white-space: pre-line;">  </span>
+			<hr>
+		<div id="dv_salida2"> </div>
+		
+	<script>			
+		let nombre = "Carlos";
+		let genero = 'M';
+		let edad = 20;
+		let sueldo = 1200.75;
+		let esPeruano = true;
+		let notas = [15, 18, 20];
+		var salida = "a";
+		
+		console.log("Nombre: " + nombre + ", Tipo: " + typeof nombre );
+		console.log("Genero: " + genero + ", Tipo: " + typeof genero );
+		console.log("Edad: " + edad + ", Tipo: " + typeof edad );
+		console.log("Sueldo: " + sueldo + ", Tipo: " + typeof sueldo );
+		console.log("Es peruano?: " + esPeruano + ", Tipo: " + typeof esPeruano );
+		<!-- console.log("notas ?: " + notas + ", Tipo: " + typeof notas); -->
+				
+		salida = "Nombre: " + nombre + ", Tipo: " + typeof nombre + 
+				"\n Genero: " + genero + ", Tipo: " + typeof genero + 
+				"\n Edad: " + edad + ", Tipo: " + typeof edad + 
+				"\n Sueldo: " + sueldo + ", Tipo: " + typeof sueldo 
+				"\n Es peruano?: " + esPeruano + ", Tipo: " + typeof esPeruano;
+		
+		
+		document.getElementById("p_salida").textContent = salida;
+		document.getElementById("sp_salida").textContent = salida;
+		document.getElementById("dv_salida").textContent = salida;
+		
+		//Imprimiendo nuevos datos
+		
+		document.getElementById("p_salida2").textContent = salida;
+		document.getElementById("sp_salida2").textContent = salida;
+		document.getElementById("dv_salida2").textContent = salida;
+		
+		alert(salida);
+		
+	</script>
+		
+	</body>
+
+</html>

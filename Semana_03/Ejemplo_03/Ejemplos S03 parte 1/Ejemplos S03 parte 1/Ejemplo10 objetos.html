@@ -1,0 +1,53 @@
+<html>
+	<head>
+		
+	</head>
+	
+	<body>
+		<script>
+			class Estudiante {
+
+			  constructor(nombre, codigo, promedio) {
+				this.nombre = nombre;
+				this.codigo = codigo;
+				this.promedio = promedio;
+			  }
+
+			  mostrarInformacion() {
+				console.log(`Nombre: ${this.nombre}`);
+				console.log(`Código: ${this.codigo}`);
+				console.log(`Promedio: ${this.promedio}`);
+			  }
+
+			  estaAprobado() {
+				return this.promedio >= 11;
+			  }
+			}
+
+			// CREACIÓN DE OBJETOS
+			const estudiante1 =
+			  new Estudiante("Ana", "2026001", 16);
+
+			const estudiante2 =
+			  new Estudiante("Carlos", "2026002", 9);
+
+			// UTILIZACIÓN
+			estudiante1.mostrarInformacion();
+
+			console.log(
+			  "¿Está aprobado?",
+			  estudiante1.estaAprobado()
+			);
+
+			estudiante2.mostrarInformacion();
+
+			console.log(
+			  "¿Está aprobado?",
+			  estudiante2.estaAprobado()
+			);
+			
+			
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+		<title> Ejemplos uso javascript	</title>
+
+	
+	</head>
+	
+	<body>
+		<h2> Ejemplo de estructura iterativa    </h2>
+		<h3> Uso de iterativo do-while </h3>
+		<p> Abre el panel de consola: CTRL + SHIFT + J o F12</p>
+
+		<span id="sp_salida" style="white-space: pre-line;">  </span>
+	
+	<script>
+		/* programa que determine la suma e imprima la serie de una 
+		progresion aritmetica */
+		
+		let To;		//To: termino inicial
+		let N;		//N: cant de terminos:
+		let R;		//R: razon aritmetica
+		let serie;
+		let suma;
+		
+		//inicializando valores
+		To= 20;
+		N = 15;
+		R = -4;
+		serie= "";
+		suma = 0;
+		
+		i = 1;
+		do{
+			Tn = To + R*(i-1);
+			suma = suma + Tn;
+			serie = serie + ", " + Tn;
+			i = i + 1;
+		} while (i<=N)
+		
+		let salida= "\n **** RESULTADOS ***" + 
+					"\n Ultimo termino: " + Tn + 
+					"\n Suma resultante: " + suma + 
+					"\n Serie impresa: "+ serie;
+		
+		console.log( salida );
+		
+		alert( salida );
+		
+		document.getElementById("sp_salida").textContent = salida;
+		
+	</script>
+	</body>
+
+</html>

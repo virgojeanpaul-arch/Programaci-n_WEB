@@ -1,0 +1,9 @@
+genera una página web con html, css y javascript que genere el siguiente boceto de formulario adjunto.
+
+Requerimientos:
+- El usuario podrá ingresar los datos  en cada casilla.
+- Los 3 botones tienen sus respectivas icónos de imagen.
+- Al pulsar el botón "Mostrar datos" se visualizará toda la información ingresada en la casilla inferior
+
+Al pulsar el boton "Limpiar casillas" se borrarán todas las casillas.
+Al pulsar el botón Ver créditos se mostrará en una nueva pestaña la información del autor

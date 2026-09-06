@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Promedio de Notas</title>
+</head>
+
+<body>
+
+    <h1>Promedio y Rendimiento de Notas</h1>
+
+    <p>Ingrese las tres notas del estudiante:</p>
+
+    <label for="nota1">Nota 1:</label>
+    <input type="number" id="nota1" step="0.01">
+    <br><br>
+
+    <label for="nota2">Nota 2:</label>
+    <input type="number" id="nota2" step="0.01">
+    <br><br>
+
+    <label for="nota3">Nota 3:</label>
+    <input type="number" id="nota3" step="0.01">
+    <br><br>
+
+    <!-- Botón Calcular -->
+    <button onclick="calcular()">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png"
+             alt="Calcular"
+             width="20">
+        Calcular
+    </button>
+
+    <!-- Botón Limpiar -->
+    <button onclick="limpiar()">
+        <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png"
+             alt="Limpiar"
+             width="20">
+        Limpiar casillas
+    </button>
+
+    <!-- Botón Créditos -->
+    <button onclick="creditos()">
+        <img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png"
+             alt="Créditos"
+             width="20">
+        Ver créditos
+    </button>
+
+    <br><br>
+
+    <h2>Resultado</h2>
+
+    <p id="resultado"></p>
+
+    <h2>Registro de operaciones</h2>
+
+    <textarea id="registro"
+              rows="15"
+              cols="60"
+              readonly></textarea>
+
+    <script>
+
+        function calcular() {
+
+            // Obtener las notas
+            let nota1 = parseFloat(document.getElementById("nota1").value);
+            let nota2 = parseFloat(document.getElementById("nota2").value);
+            let nota3 = parseFloat(document.getElementById("nota3").value);
+
+            // Validar que se hayan ingresado las tres notas
+            if (isNaN(nota1) || isNaN(nota2) || isNaN(nota3)) {
+                alert("Debe ingresar las tres notas.");
+                return;
+            }
+
+            // Validar que las notas estén entre 0 y 20
+            if (nota1 < 0 || nota1 > 20 ||
+                nota2 < 0 || nota2 > 20 ||
+                nota3 < 0 || nota3 > 20) {
+
+                alert("Las notas deben estar entre 0 y 20.");
+                return;
+            }
+
+            // Calcular el promedio
+            let promedio = (nota1 + nota2 + nota3) / 3;
+
+            // Determinar condición
+            let condicion;
+
+            if (promedio >= 12) {
+                condicion = "APROBADO";
+            } else {
+                condicion = "DESAPROBADO";
+            }
+
+            // Determinar rendimiento
+            let rendimiento;
+
+            if (promedio < 12) {
+                rendimiento = "DEFICIENTE";
+            } else if (promedio > 12 && promedio < 16) {
+                rendimiento = "REGULAR";
+            } else {
+                rendimiento = "SOBRESALIENTE";
+            }
+
+            // Mostrar resultado
+            document.getElementById("resultado").innerHTML =
+                "Nota 1:

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+		<title> Ejemplos uso javascript	</title>
+
+	
+	</head>
+	
+	<body>
+		<h2> Ejemplo 3. Uso de constantes  </h2>
+		<p> Abre el panel de consola: CTRL + SHIFT + J o F12</p>
+		
+		<span id="sp_salida" style="white-space: pre-line;">  </span>
+		
+		<br><br> <hr>
+		<span id="sp_prom" style="white-space: pre-line;">  </span>
+		
+		<br><br> <hr>
+		<span id="sp_area" style="white-space: pre-line;">  </span>
+		
+	<script>	
+		//declaracion de variables o constantes
+		const IGV = 0.18;	//definir una constante
+		let subtotal = 100;  //variable
+		
+		let total = subtotal + (subtotal * IGV);
+		
+		console.log("Total:", total);	//118
+		
+		var salida = "\n Resultados: " + 
+					 "\n Total: " + total;
+					 
+		document.getElementById("sp_salida").textContent = salida;
+		
+		// promedio de notas
+		let nota1 = 15.5
+		let nota2 = 17.75
+		let nota3 = 19.25
+		let promedio = (2 * nota1 + 3 * nota2 + 5 * nota3)/10;
+		var salida2 = "\n Resultado de notas: " +
+					"\n Nota1: " + nota1 +
+					"\n Nota2: " + nota2 +
+					"\n Nota3: " + nota3 +
+					"\n Promedio: " + promedio;
+		// imprimir en el nuevo 
+		document.getElementById("sp_prom").textContent = salida2;
+		
+		// area de un circulo
+		
+		const pi = 3.1416;
+		let r = 5;
+		let area = pi * (r * r);
+		
+		var salida3 = "El área de un círculo:" + area;
+		
+		document.getElementById("sp_area").textContent = salida3;
+		
+	</script>
+		
+	</body>
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Operaciones con números reales</title>
+</head>
+
+<body>
+
+    <h1>Calculadora de números reales</h1>
+
+    <p>Ingrese dos números reales:</p>
+
+    <label for="numero1">Primer número:</label>
+    <input type="number" id="numero1" step="any">
+    <br><br>
+
+    <label for="numero2">Segundo número:</label>
+    <input type="number" id="numero2" step="any">
+    <br><br>
+
+    <!-- Botón Calcular -->
+    <button onclick="calcular()">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png"
+             alt="Calcular"
+             width="20"
+             height="20">
+        Calcular
+    </button>
+
+    <!-- Botón Limpiar -->
+    <button onclick="limpiar()">
+        <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png"
+             alt="Limpiar"
+             width="20"
+             height="20">
+        Limpiar casillas
+    </button>
+
+    <!-- Botón Créditos -->
+    <button onclick="creditos()">
+        <img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png"
+             alt="Créditos"
+             width="20"
+             height="20">
+        Ver créditos
+    </button>
+
+    <br><br>
+
+    <h2>Resultados</h2>
+
+    <p id="resultado"></p>
+
+    <h2>Registro de operaciones</h2>
+
+    <textarea id="registro"
+              rows="15"
+              cols="60"
+              readonly
+              placeholder="Aquí aparecerá el registro de las operaciones..."></textarea>
+
+
+    <script>
+
+        function calcular() {
+
+            // Obtener los números ingresados
+            let numero1 = parseFloat(document.getElementById("numero1").value);
+            let numero2 = parseFloat(document.getElementById("numero2").value);
+
+            // Validar que los dos números hayan sido ingresados
+            if (isNaN(numero1) || isNaN(numero2)) {
+                alert("Por favor, ingrese los dos números reales.");
+                return;
+            }
+
+            // Realizar las operaciones
+            let suma = numero1 + numero2;
+            let resta = numero1 - numero2;
+            let producto = numero1 * numero2;
+
+            // Calcular división
+            let division;
+
+            if (numero2 === 0) {
+                division = "No se puede dividir entre cero";
+            } else {
+                division = numero1 / numero2;
+            }
+
+            // Mostrar los resultados
+            document.getElementById("resultado").innerHTML =
+                "Número 1: " + numero1 + "<br>" +
+                "Número 2: " + numero2 + "<br><br>" +
+                "Suma: " + suma + "<br>" +
+                "Resta: " + resta + "<br>" +
+                "Producto: " + producto + "<br>" +
+                "División: " + division;
+
+            // Crear el registro de la operación
+            let nuevoRegistro =
+                "========================================\n" +
+                "Número 1: " + numero1 + "\n" +
+                "Número 2: " + numero2 + "\n" +
+                "Suma: " + suma + "\n" +
+                "Resta: " + resta + "\n" +
+                "Producto: " + producto + "\n" +
+                "División: " + division + "\n" +
+                "========================================\n";
+
+            // Agregar el registro al textarea
+            document.getElementById("registro").value += nuevoRegistro;
+
+        }
+
+
+        function limpiar() {
+
+            // Limpiar las casillas de entrada
+            document.getElementById("numero1").value = "";
+            document.getElementById("numero2").value = "";
+
+            // Limpiar el resultado
+            document.getElementById("resultado").innerHTML = "";
+
+            // Colocar el cursor en el primer campo
+            document.getElementById("numero1").focus();
+
+        }
+
+
+        function creditos() {
+
+            alert(
+                "CRÉDITOS\n\n" +
+                "Programa: Calculadora de números reales\n" +
+                "Autor: Tu nombre aquí\n" +
+                "Curso: Programación Web\n" +
+                "Tecnologías: HTML y JavaScript"
+            );
+
+        }
+
+    </script>
+
+</body>
+
+</html>
