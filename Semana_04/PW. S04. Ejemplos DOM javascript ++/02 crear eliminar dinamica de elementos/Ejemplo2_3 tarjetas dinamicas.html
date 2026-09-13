@@ -1,0 +1,18 @@
+<button onclick="crearTarjeta()">Nueva Tarjeta</button>
+<div id="contenedor"></div>
+
+<script>
+function crearTarjeta(){
+    const div = document.createElement("div");
+
+    div.innerHTML = `
+        <h3>Producto</h3>
+        <p>Descripción</p>
+    `;
+
+    div.style.border = "1px solid black";
+    div.style.margin = "5px";
+
+    document.getElementById("contenedor").appendChild(div);
+}
+</script>

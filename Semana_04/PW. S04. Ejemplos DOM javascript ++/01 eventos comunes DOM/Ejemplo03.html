@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="caja" style="width:200px;height:100px;background:lightblue;">
+</div>
+
+<script>
+const caja = document.getElementById("caja");
+
+caja.addEventListener("mouseover", () => {
+    caja.style.background = "orange";
+});
+
+caja.addEventListener("mouseout", () => {
+    caja.style.background = "lightblue";
+});
+</script>
+
+</body>
+</html>

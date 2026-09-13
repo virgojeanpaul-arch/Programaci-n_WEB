@@ -1,0 +1,10 @@
+<button onclick="crearParrafo()">Agregar</button>
+<div id="contenedor"></div>
+
+<script>
+function crearParrafo(){
+    const p = document.createElement("p");
+    p.textContent = "Nuevo párrafo";
+    document.getElementById("contenedor").appendChild(p);
+}
+</script>

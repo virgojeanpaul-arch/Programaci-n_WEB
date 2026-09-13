@@ -1,0 +1,18 @@
+<input id="nombre">
+<button onclick="agregar()">Agregar</button>
+
+<ul id="lista"></ul>
+
+<script>
+function agregar(){
+
+    const li = document.createElement("li");
+
+    li.innerHTML = `
+        ${nombre.value}
+        <button onclick="this.parentElement.remove()">X</button>
+    `;
+
+    lista.appendChild(li);
+}
+</script>

@@ -1,0 +1,14 @@
+<html>
+	<body>
+	<label>Escribe: <input id="texto" type="text"></label>
+	<p>Caracteres: <span id="contador">0</span></p>
+	<script>
+	const texto = document.getElementById("texto");
+	const contador = document.getElementById("contador");
+	texto.addEventListener("input", function () {
+	contador.textContent = texto.value.length;
+	});
+	</script>
+	</body>
+	
+</html>

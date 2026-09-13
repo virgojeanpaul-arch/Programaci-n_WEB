@@ -1,0 +1,20 @@
+<input id="libro">
+<button onclick="agregarLibro()">Añadir Libro</button>
+
+<div id="biblioteca"></div>
+
+<script>
+function agregarLibro(){
+
+    const card = document.createElement("div");
+
+    card.innerHTML = `
+        <h3>${libro.value}</h3>
+        <button onclick="this.parentElement.remove()">
+            Eliminar
+        </button>
+    `;
+
+    biblioteca.appendChild(card);
+}
+</script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<body>
+	<h1>Tienda ABC</h1>
+	<input id="buscar" placeholder="Buscar producto">
+	<section id="catalogo"></section>
+	
+	<script>
+	const productos = ["Laptop", "Mouse", "Teclado", "Monitor", "Impresora"];
+	const catalogo = document.getElementById("catalogo");
+	
+	function mostrarProductos(texto = "") {
+		catalogo.replaceChildren();
+		productos
+			.filter(p => p.toLowerCase().includes(texto.toLowerCase()))
+			.forEach(p => {
+				const item = document.createElement("p");
+				item.textContent = p;
+				catalogo.appendChild(item);
+			});
+	}
+	
+	document.getElementById("buscar").addEventListener("input", e => {
+		mostrarProductos(e.target.value);
+	});
+	
+	mostrarProductos();
+	</script>
+	</body>
+</html>

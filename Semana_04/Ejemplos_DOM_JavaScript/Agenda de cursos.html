@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<body>
+	<h2>Agenda de cursos</h2>
+	<input id="curso" placeholder="Curso">
+	<input id="docente" placeholder="Docente">
+	<button id="agregar">Registrar</button>
+	<ol id="agenda"></ol>
+	<script>
+	const agenda = document.getElementById("agenda");
+	document.getElementById("agregar").addEventListener("click", function () {
+	const curso = document.getElementById("curso").value.trim();
+	const docente = document.getElementById("docente").value.trim();
+	if (!curso || !docente) return;
+	const li = document.createElement("li");
+	li.textContent = curso + " | Docente: " + docente + " ";
+	const borrar = document.createElement("button");
+	borrar.textContent = "Borrar";
+	borrar.onclick = () => li.remove();
+	li.appendChild(borrar);
+	agenda.appendChild(li);
+	});
+	</script>
+	</body>
+</html>

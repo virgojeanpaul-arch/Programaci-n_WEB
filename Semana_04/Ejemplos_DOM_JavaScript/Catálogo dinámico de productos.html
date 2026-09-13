@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<body>
+	<h1>Tienda ABC</h1>
+	<section id="catalogo"></section>
+	<script>
+	const productos = [
+		{ nombre: "Laptop", precio: 2500 },
+		{ nombre: "Mouse", precio: 60 },
+		{ nombre: "Teclado", precio: 120 },
+		{ nombre: "Monitor", precio: 800 }
+	];
+	
+	const catalogo = document.getElementById("catalogo");
+	
+	productos.forEach(producto => {
+		const article = document.createElement("article");
+		const h2 = document.createElement("h2");
+		const p = document.createElement("p");
+		const button = document.createElement("button");
+		
+		h2.textContent = producto.nombre;
+		p.textContent = "Precio: S/ " + producto.precio.toFixed(2);
+		button.textContent = "Agregar al carrito";
+	
+		button.onclick = () => alert(producto.nombre + " agregado.");
+		
+		article.append(h2, p, button);
+		catalogo.appendChild(article);
+	});
+	</script>
+	</body>
+</html>

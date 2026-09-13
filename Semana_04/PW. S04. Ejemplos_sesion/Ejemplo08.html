@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+	<head>
+	  
+	  <title> Ejemplo 08 </title>  
+	  
+	</head>
+
+	<body>
+		<!--casilla de texto con id="texto" -->
+		<input type="text" id="texto" placeholder="Escribe algo">
+		
+		<!--boton con evento que llama a la funcion agregar() -->
+		<button onclick="agregar()"> Agregar item </button>
+		
+		<!--lista no ordenada (unordered list) con id="lista"-->
+		<ul id="lista"> </ul>
+		
+		<!-- codificamos el script-->
+		<script>
+			function agregar(){
+				<!-- asignar a valor el texto de la casilla de id="texto"-->
+				const valor = document.getElementById("texto").value;
+				
+				<!--si no hay valor en la casilla, no hacer nada -->
+				if (valor == "" ) return;
+				
+				<!-- crear el elemento de id="li" y asignarlo a la constante li -->
+				const li = document.crearElemento("li");
+				
+				<!--al nuevo objeto del tipo <li> asignar el texto de la casilla "valor"-->
+				li.textContent = valor;
+				
+				<!--Obtener del documento el elemento de id lista y agregarle el objeto -->			
+				document.getElementById("lista").appendChild(li)
+			}
+		</script>
+		
+		
+
+	  
+	</body>
+</html>

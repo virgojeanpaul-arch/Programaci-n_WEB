@@ -1,0 +1,20 @@
+<input type="number" id="n1">
+<input type="number" id="n2">
+<input type="number" id="n3">
+
+<button onclick="calcular()">
+Promedio
+</button>
+
+<p id="resultado"></p>
+
+<script>
+function calcular(){
+
+    let promedio =
+    (+n1.value + +n2.value + +n3.value)/3;
+
+    resultado.textContent =
+    "Promedio: " + promedio.toFixed(2);
+}
+</script>

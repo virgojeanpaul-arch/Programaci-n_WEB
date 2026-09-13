@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button id="contador">0</button>
+
+<script>
+let cantidad = 0;
+
+document.getElementById("contador").addEventListener("click", function() {
+    cantidad++;
+    this.textContent = cantidad;
+});
+</script>
+
+</body>
+</html>

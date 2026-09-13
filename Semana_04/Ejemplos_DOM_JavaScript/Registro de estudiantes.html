@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<body>
+	<h1>Portal del Colegio</h1>
+	<h2>Registro de estudiantes</h2>
+	<input id="nombre" placeholder="Nombre completo">
+	<input id="grado" placeholder="Grado">
+	<button id="registrar">Registrar</button>
+	<ul id="estudiantes"></ul>
+	
+	<script>
+	document.getElementById("registrar").addEventListener("click", function () {
+		const nombre = document.getElementById("nombre").value.trim();
+		const grado = document.getElementById("grado").value.trim();
+		if (!nombre || !grado) return;
+		
+		const li = document.createElement("li");
+		li.textContent = `${nombre} - ${grado} `;
+	
+		const btn = document.createElement("button");
+		btn.textContent = "Eliminar";
+		btn.onclick = () => li.remove();
+		
+		li.appendChild(btn);
+		document.getElementById("estudiantes").appendChild(li);
+	});
+	</script>
+	</body>
+</html>

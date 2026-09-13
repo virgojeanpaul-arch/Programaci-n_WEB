@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<body>
+	<h1>Colegio ABC</h1>
+	<h2>Horario de cursos</h2>
+	<table border="1">
+	<thead><tr><th>Curso</th><th>Docente</th><th>Horario</th></tr></thead>
+	<tbody id="tabla"></tbody>
+	</table>
+	
+	<script>
+	const cursos = [
+		{ curso: "Matemática", docente: "Ana Pérez", horario: "08:00" },
+		{ curso: "Comunicación", docente: "Luis Gómez", horario: "10:00" },
+		{ curso: "Ciencia", docente: "María Díaz", horario: "12:00" }
+	];
+	
+	const tabla = document.getElementById("tabla");
+	
+	cursos.forEach(c => {
+		const fila = document.createElement("tr");
+		[c.curso, c.docente, c.horario].forEach(valor => {
+			const celda = document.createElement("td");
+			celda.textContent = valor;
+			fila.appendChild(celda);
+		});
+		tabla.appendChild(fila);
+	});
+	</script>
+	</body>
+</html>

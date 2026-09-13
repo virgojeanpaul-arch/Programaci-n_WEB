@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<body>
+	<h1>Panel de avisos</h1>
+	<input id="titulo" placeholder="Título">
+	<textarea id="contenido" placeholder="Contenido"></textarea>
+	<button id="publicar">Publicar aviso</button>
+	<section id="avisos"></section>
+	
+	<script>
+	document.getElementById("publicar").addEventListener("click", function () {
+		const titulo = document.getElementById("titulo").value.trim();
+		const contenido = document.getElementById("contenido").value.trim();
+		
+		if (!titulo || !contenido) return;
+		
+		const article = document.createElement("article");
+		const h2 = document.createElement("h2");
+		const p = document.createElement("p");
+		const btn = document.createElement("button");
+	
+		h2.textContent = titulo;
+		p.textContent = contenido;
+		btn.textContent = "Eliminar aviso";
+		btn.onclick = () => article.remove();
+		
+		article.append(h2, p, btn);
+		document.getElementById("avisos").appendChild(article);
+	
+		document.getElementById("titulo").value = "";
+		document.getElementById("contenido").value = "";
+	});
+	</script>
+	</body>
+</html>

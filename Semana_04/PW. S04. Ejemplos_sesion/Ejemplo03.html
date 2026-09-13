@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  
+  <title> Ejemplo 03 </title>  
+  
+</head>
+
+<body>
+  
+  <!--creando una casilla de texto-->
+  <input type="text" id="nombre" placeholder="Escribe aqui tu nombre">
+  
+  <!--parrafo con id="salida"-->
+  <p id="salida"> parrafo actualizable </p>
+  
+  <script>
+	document.getElementById("nombre").addEventListener(
+		"input",function(){
+				document.getElementById("salida").textContent = this.value;
+			}
+		)
+  </script>
+  
+  
+</body>
+</html>

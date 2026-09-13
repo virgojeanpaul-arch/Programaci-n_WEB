@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<body>
+	<h2>Contactos</h2>
+	<input id="nombre" placeholder="Nombre">
+	<input id="correo" type="email" placeholder="Correo">
+	<button id="agregar">Agregar contacto</button>
+	<ul id="lista"></ul>
+	
+	<script>
+	const lista = document.getElementById("lista");
+	document.getElementById("agregar").addEventListener("click", function () {
+		nombre = document.getElementById("nombre").value.trim();
+		const correo = document.getElementById("correo").value.trim();
+		if (!nombre || !correo) {
+		alert("Complete ambos campos.");
+		return;
+	}
+		const li = document.createElement("li");
+		const texto = document.createElement("span");
+		const borrar = document.createElement("button");
+		texto.textContent = nombre + " - " + correo + " ";
+		borrar.textContent = "Eliminar";
+		borrar.addEventListener("click", () => li.remove());
+		li.append(texto, borrar);
+		lista.appendChild(li);
+	});
+	</script>
+	</body>
+</html>

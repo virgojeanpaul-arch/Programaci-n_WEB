@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<body>
+	<h1>Tienda ABC</h1>
+	<h2>Catálogo</h2>
+	<div id="catalogo"></div>
+	<h2>Carrito</h2>
+	<ul id="carrito"></ul>
+	<p>Total: S/ <span id="total">0.00</span></p>
+	
+	<script>
+	const productos = [
+		{ nombre: "Laptop", precio: 2500 },
+		{ nombre: "Mouse", precio: 60 },
+		{ nombre: "Teclado", precio: 120 }
+	];
+	
+	const catalogo = document.getElementById("catalogo");
+	const carrito = document.getElementById("carrito");
+	const total = document.getElementById("total");
+	let suma = 0;
+	
+	productos.forEach(p => {
+		const div = document.createElement("div");
+		const texto = document.createElement("span");
+		const btn = document.createElement("button");
+		
+		texto.textContent = `${p.nombre} - S/ ${p.precio.toFixed(2)} `;
+		btn.textContent = "Comprar";
+		
+		btn.onclick = () => {
+			const li = document.createElement("li");
+			li.textContent = `${p.nombre} - S/ ${p.precio.toFixed(2)} `;
+			const borrar = document.createElement("button");
+			borrar.textContent = "Quitar";
+			
+			borrar.onclick = () => {
+				li.remove();
+				suma -= p.precio;
+				total.textContent = suma.toFixed(2);
+			};
+			
+			li.appendChild(borrar);
+			carrito.appendChild(li);
+			suma += p.precio;
+			total.textContent = suma.toFixed(2);
+		};
+		
+		div.append(texto, btn);
+		catalogo.appendChild(div);
+	});
+	</script>
+	</body>
+</html>

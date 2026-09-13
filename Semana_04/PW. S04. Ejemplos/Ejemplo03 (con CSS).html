@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Agenda dinámica</title>
+</head>
+<body>
+
+  <h1>Agenda dinámica</h1>
+
+  <form id="formulario">
+    <label for="nombre">Nombre:</label>
+    <input id="nombre" type="text" required>
+    <button type="submit">Agregar nombre</button>
+  </form>
+
+  <p>Personas registradas: <span id="contador">0</span></p>
+  <ol id="personas"></ol>
+
+  <script>
+    const formulario = document.querySelector("#formulario");
+    const entrada = document.querySelector("#nombre");
+    const personas = document.querySelector("#personas");
+    const contador = document.querySelector("#contador");
+
+    function actualizarContador() {
+      contador.textContent = personas.children.length;
+    }
+
+    formulario.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const nombre = entrada.value.trim();
+
+      if (nombre === "") {
+        return;
+      }
+
+      const item = document.createElement("li");
+      const texto = document.createElement("span");
+      const boton = document.createElement("button");
+
+      texto.textContent = nombre;
+      boton.textContent = "Eliminar";
+
+      boton.addEventListener("click", () => {
+        item.remove();
+        actualizarContador();
+      });
+
+      item.append(texto, " ", boton);
+      personas.appendChild(item);
+
+      formulario.reset();
+      entrada.focus();
+      actualizarContador();
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title> Ejemplo02 </title>  
+  
+  <!--esto es un script-->
+  <script>
+	function cambiar(){
+		document.getElementById("texto").textContent = "Texto modificado";
+	}
+	
+	function establecerNombre(){
+		document.getElementById("nombre").textContent = "Alejandro Manuel";
+	}
+	
+  </script>
+  
+</head>
+
+<body>
+  <h2 id="texto"> Titulo h2 orginal </h2>
+  
+  <p id="nombre"> Texto de parrafo </h2>
+  
+  <br>
+  <!--crear el boton asociado-->
+  <button onclick="cambiar()"> Cambiar texto </button>
+  <br><br>
+  
+  <button onclick="establecerNombre()"> Mostrar nombre en parrafo </button>
+
+    
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Demostración del DOM</title>
+</head>
+<body>
+
+  <h1 id="titulo">Demostración del DOM</h1>
+
+  <p id="descripcion">
+    Este texto será modificado mediante JavaScript.
+  </p>
+
+  <button id="cambiar">Cambiar contenido</button>
+  <button id="crear">Crear elemento</button>
+  <button id="eliminar">Eliminar elemento creado</button>
+
+  <section id="resultado">
+    <h2>Resultado</h2>
+  </section>
+
+  <script>
+    const titulo = document.querySelector("#titulo");
+    const descripcion = document.querySelector("#descripcion");
+    const resultado = document.querySelector("#resultado");
+
+    let elementoCreado = null;
+
+    document.querySelector("#cambiar").addEventListener("click", () => {
+      titulo.textContent = "El título fue modificado";
+      descripcion.textContent =
+        "JavaScript modificó el contenido del documento usando el DOM.";
+    });
+
+    document.querySelector("#crear").addEventListener("click", () => {
+      if (elementoCreado !== null) {
+        return;
+      }
+
+      elementoCreado = document.createElement("p");
+      elementoCreado.textContent =
+        "Este párrafo fue creado dinámicamente.";
+      resultado.appendChild(elementoCreado);
+    });
+
+    document.querySelector("#eliminar").addEventListener("click", () => {
+      if (elementoCreado !== null) {
+        elementoCreado.remove();
+        elementoCreado = null;
+      }
+    });
+  </script>
+
+</body>
+</html>

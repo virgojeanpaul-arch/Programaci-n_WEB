@@ -1,0 +1,17 @@
+<input type="number" id="celsius">
+
+<button onclick="convertir()">
+    Convertir
+</button>
+
+<p id="salida"></p>
+
+<script>
+function convertir(){
+
+    let c = Number(celsius.value);
+    let f = (c * 9/5) + 32;
+
+    salida.textContent = f.toFixed(2);
+}
+</script>

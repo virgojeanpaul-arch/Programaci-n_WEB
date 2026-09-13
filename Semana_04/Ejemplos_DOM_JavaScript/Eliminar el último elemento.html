@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<body>
+	<input id="nombre" placeholder="Nombre">
+	<button id="agregar">Agregar</button>
+	<button id="eliminar">Eliminar último</button>
+	<ul id="personas"></ul>
+	<script>
+	const personas = document.getElementById("personas");
+	document.getElementById("agregar").addEventListener("click", function () {
+	const valor = document.getElementById("nombre").value.trim();
+	if (!valor) return;
+	const li = document.createElement("li");
+	li.textContent = valor;
+	personas.appendChild(li);
+	document.getElementById("nombre").value = "";
+	});
+	document.getElementById("eliminar").addEventListener("click", function () {
+	if (personas.lastElementChild) {
+	personas.lastElementChild.remove();
+	}
+	});
+	</script>
+	</body>
+</html>

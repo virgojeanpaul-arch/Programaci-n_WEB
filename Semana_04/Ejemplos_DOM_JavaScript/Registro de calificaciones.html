@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<body>
+	<h1>Calificaciones</h1>
+	<input id="alumno" placeholder="Estudiante">
+	<input id="nota" type="number" min="0" max="20" placeholder="Nota">
+	<button id="registrar">Registrar nota</button>
+	<ul id="notas"></ul>
+	
+	<script>
+	document.getElementById("registrar").addEventListener("click", function () {
+		const alumno = document.getElementById("alumno").value.trim();
+		const nota = Number(document.getElementById("nota").value);
+	
+		if (!alumno || nota < 0 || nota > 20) {
+			alert("Ingrese datos válidos.");
+			return;
+		}
+	
+		const li = document.createElement("li");
+		const estado = nota >= 11 ? "Aprobado" : "Desaprobado";
+		li.textContent = `${alumno}: ${nota} - ${estado}`;
+		
+		document.getElementById("notas").appendChild(li);
+	});
+	</script>
+	</body>
+</html>

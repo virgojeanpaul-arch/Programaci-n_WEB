@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1 id="titulo">Mi primera página DOM</h1>
+<p id="mensaje">Texto original.</p>
+<button id="btn">Cambiar mensaje</button>
+<script>
+const mensaje = document.getElementById("mensaje");
+document.getElementById("btn").addEventListener("click", function () {
+mensaje.textContent = "El DOM fue modificado correctamente.";
+});
+</script>
+</body>
+</html>

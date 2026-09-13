@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<body>
+	<h2>Carrito</h2>
+	<input id="producto" placeholder="Producto">
+	<input id="precio" type="number" step="0.01" placeholder="Precio">
+	<button id="agregar">Agregar</button>
+	<ul id="carrito"></ul>
+	<p>Total: S/ <span id="total">0.00</span></p>
+	<script>
+	const carrito = document.getElementById("carrito");
+	const total = document.getElementById("total");
+	function actualizarTotal() {
+	let suma = 0;
+	carrito.querySelectorAll("li").forEach(li => {
+	suma += Number(li.dataset.precio);
+	});
+	total.textContent = suma.toFixed(2);
+	}
+	document.getElementById("agregar").addEventListener("click", function () {
+	const producto = document.getElementById("producto").value.trim();
+	const precio = Number(document.getElementById("precio").value);
+	if (!producto || precio <= 0) {
+	alert("Ingrese un producto y un precio válido.");
+	return;
+	}
+	const li = document.createElement("li");
+	li.dataset.precio = precio;
+	li.textContent = producto + " - S/ " + precio.toFixed(2) + " ";
+	const borrar = document.createElement("button");
+	borrar.textContent = "Eliminar";
+	borrar.addEventListener("click", () => {
+	li.remove();
+	actualizarTotal();
+	});
+	li.appendChild(borrar);
+	carrito.appendChild(li);
+	actualizarTotal();
+	});
+	</script>
+	</body>
+</html>

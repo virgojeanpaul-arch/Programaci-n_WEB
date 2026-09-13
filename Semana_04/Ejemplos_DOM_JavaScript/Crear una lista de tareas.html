@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<body>
+	<input id="tarea" placeholder="Nueva tarea">
+	<button id="agregar">Agregar</button>
+	<ul id="lista"></ul>
+	<script>
+	const entrada = document.getElementById("tarea");
+	const lista = document.getElementById("lista");
+	document.getElementById("agregar").addEventListener("click", function () {
+		const texto = entrada.value.trim();
+		if (!texto) return;
+		const li = document.createElement("li");
+		li.textContent = texto;
+		lista.appendChild(li);
+		entrada.value = "";
+		entrada.focus();
+	});
+	</script>
+	</body>
+</html>

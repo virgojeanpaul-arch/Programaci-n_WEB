@@ -1,0 +1,20 @@
+<form id="formulario">
+
+<input type="text" id="nombre" placeholder="Nombre">
+<input type="email" id="correo" placeholder="Correo">
+
+<button>Registrar</button>
+
+</form>
+
+<p id="mensaje"></p>
+
+<script>
+formulario.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    mensaje.textContent =
+        `Bienvenido ${nombre.value}`;
+});
+</script>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<body>
+	<input id="nombre" placeholder="Escribe tu nombre">
+	<p id="saludo"></p>
+	<script>
+	const nombre = document.getElementById("nombre");
+	ombre.addEventListener("keydown", function (e) {
+		if (e.key === "Enter") {
+		document.getElementById("saludo").textContent =
+		"Hola, " + nombre.value + ". ¡Bienvenido!";
+	}
+	});
+	</script>
+	</body>
+</html>

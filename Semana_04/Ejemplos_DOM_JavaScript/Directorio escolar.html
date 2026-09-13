@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<body>
+	<h1>Directorio escolar</h1>
+	<input id="nombre" placeholder="Nombre">
+	<select id="rol"><option>Estudiante</option><option>Docente</option></select>
+	<button id="agregar">Agregar</button>
+	<ul id="directorio"></ul>
+	<script>
+	const personas = [];
+	const directorio = document.getElementById("directorio");
+	
+	function render() {
+		directorio.replaceChildren();
+		personas.forEach((p, i) => {
+			const li = document.createElement("li");
+			li.textContent = `${p.nombre} - ${p.rol} `;
+			const b = document.createElement("button");
+			b.textContent = "Eliminar";
+			b.onclick = () => { personas.splice(i, 1); render(); };
+			li.appendChild(b);
+			directorio.appendChild(li);
+		});
+	}
+	
+	document.getElementById("agregar").onclick = () => {
+		const nombre = document.getElementById("nombre").value.trim();
+		const rol = document.getElementById("rol").value;
+		if (!nombre) return;
+		personas.push({nombre, rol});
+		render();
+	};
+	</script>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<input type="text" id="producto">
+<input type="number" id="precio">
+
+<button onclick="agregar()">
+Agregar
+</button>
+
+<table border="1">
+<thead>
+<tr>
+<th>Producto</th>
+<th>Precio</th>
+<th>Acción</th>
+</tr>
+</thead>
+
+<tbody id="tabla"></tbody>
+</table>
+
+<script>
+function agregar(){
+
+    let fila = document.createElement("tr");
+
+    fila.innerHTML = `
+        <td>${producto.value}</td>
+        <td>S/. ${precio.value}</td>
+        <td>
+            <button onclick="this.closest('tr').remove()">
+                Eliminar
+            </button>
+        </td>
+    `;
+
+    tabla.appendChild(fila);
+
+    producto.value = "";
+    precio.value = "";
+}
+</script>

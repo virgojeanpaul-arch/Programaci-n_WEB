@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+	<head>
+	  
+	  <title> Ejemplo 05 </title>  
+
+	</head>
+
+	<body>
+
+	  <form id="formulario">
+		<!--Casilla de texto"-->
+			<input type="text" placeholder="Aqui tu nombre..">
+						
+			<!--Boton de comando-->
+			<button type="submit"> Enviar </button>	  
+		</form>
+	  
+	  <script>
+			<!--captura el elemento de id: "formulario"-->			
+			document.getElementById("formulario").addEventListener(
+				<!--agrega al elemento su oidor de eventos-->				
+				"submit", function(e){
+					<!--asignar la accion de envio (submit) y ejecutar la funcion(e)
+					e.preventDefault();
+					<!--ejecutando el metodo preventDefault()
+					alert("Formulario enviado correctamente!");
+					<!-- muestra el mensaje... -->
+				}
+			);
+	  </script>
+	  
+	  
+	</body>
+</html>

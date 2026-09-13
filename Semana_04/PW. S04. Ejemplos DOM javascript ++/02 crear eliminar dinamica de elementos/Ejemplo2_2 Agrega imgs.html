@@ -1,0 +1,10 @@
+<button onclick="agregarImagen()">Agregar Imagen</button>
+<div id="imagenes"></div>
+
+<script>
+function agregarImagen(){
+    const img = document.createElement("img");
+    img.src = "https://picsum.photos/150";
+    document.getElementById("imagenes").appendChild(img);
+}
+</script>

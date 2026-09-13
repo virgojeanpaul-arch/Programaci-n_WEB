@@ -1,0 +1,24 @@
+<input id="estudiante">
+<button onclick="agregarEstudiante()">Registrar</button>
+
+<table border="1">
+    <tbody id="tabla"></tbody>
+</table>
+
+<script>
+function agregarEstudiante(){
+
+    const fila = document.createElement("tr");
+
+    fila.innerHTML = `
+        <td>${estudiante.value}</td>
+        <td>
+            <button onclick="this.closest('tr').remove()">
+                Eliminar
+            </button>
+        </td>
+    `;
+
+    tabla.appendChild(fila);
+}
+</script>

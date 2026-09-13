@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+
+	<head>
+	  
+	  <title> Ejemplo 04. Evento mouseover</title>  
+	  
+	</head>
+
+	<body>
+	  <div id="caja" style="width:200px, 
+			height:100px; background:ligthblue;">
+			Esto es una caja de 100x200pix, 
+			pasa el puntero por aqui
+		</div>
+		
+		<script>
+			const objetoCaja = document.getElementById("caja");
+			
+			 objetoCaja.addEventListener("mouseover", function(){ 
+					 objetoCaja.style.background = "yellow"; 
+					}
+				);
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+	<head>
+	  
+	  <title> Ejemplo 06</title>  
+	  
+	</head>
+
+	<body>
+		<!--generar el boton que llama al metodo crear()-->
+		<button onclick="crear()"> Crear parrafo </button>
+		
+		<!--crear el bloque divisor de id="contenedor"-->
+		<div id="contenedor">
+			Esto es un contenedor div			
+		</div>
+		
+
+		
+		<!--esto es el script a programar-->
+		<script>
+			function crear(){
+				//crear elemento
+				const p = document.createElement("p");
+				
+				//estableciendo contenido al nuevo elemento tipo <p>
+				p.textContent = "Esto es un parrafo nuevo, su valor ha sido actualizado";
+				
+				//agregar el nuevo parrafo <p> con (appenChild) al elemento de id="contenedor"
+				document.getElementById("contenedor").appendChild(p);
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- DESAFIO-->
+<!-- Crea una 2da version de esta pagina que permita agregar elementos 
+(y remover elementos) de un objeto tipo lista -->

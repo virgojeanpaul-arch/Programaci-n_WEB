@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input type="text" id="nombre">
+<p id="resultado"></p>
+
+<script>
+document.getElementById("nombre").addEventListener("input", function() {
+    document.getElementById("resultado").textContent = this.value;
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<body>
+	<label>Carrera:
+	<select id="carrera">
+		<option value="">Seleccione...</option>
+		<option>Ingeniería de Sistemas</option>
+		<option>Ingeniería civil</option>
+		<option>Ingeniería mecatronica</option>
+	</select>
+	</label>
+	<p id="resultado">No se ha seleccionado una carrera.</p>
+	<script>
+	document.getElementById("carrera").addEventListener("change", function (e) {
+	document.getElementById("resultado").textContent =
+	e.target.value
+	? "Carrera seleccionada: " + e.target.value
+	: "No se ha seleccionado una carrera.";
+	});
+	</script>
+	</body>
+</html>

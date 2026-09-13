@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<body>
+	<input id="producto" placeholder="Producto">
+	<button id="agregar">Agregar</button>
+	<ul id="productos"></ul>
+	<script>
+	const productos = document.getElementById("productos");
+	document.getElementById("agregar").addEventListener("click", function () {
+		const valor = document.getElementById("producto").value.trim();
+		if (!valor) return;
+		const li = document.createElement("li");
+		li.textContent = valor;
+		li.title = "Haz clic para eliminar";
+		li.addEventListener("click", function () {
+			li.remove();
+		});
+		productos.appendChild(li);
+		document.getElementById("producto").value = "";
+	});
+	</script>
+	</body>
+</html>

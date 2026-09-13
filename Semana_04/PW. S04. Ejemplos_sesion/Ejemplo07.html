@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+	<head>
+	  
+	  <title> Ejemplo 07 </title>
+	  
+	</head>
+
+	<body>
+		<!--crear el objeto lista no ordenada <ul> -->
+		<ul id="lista">
+			<li> Elemento 1 </li>
+			<li> Elemento 2 </li>
+			<li> Elemento 3 </li>
+		</ul>
+		
+		<!--crear un botton con evento-->
+		<button onclick="eliminar()"> Eliminar ultimo elemento de lista </button>
+		
+		<script>
+			function eliminar(){
+				<!--crear el objeto constante: lista -->
+				const objLista = document.getElementById("lista");
+				
+				<!--Si existe un ultimo elemento en el objeto lista-->
+				if( objLista.lastElementChild ) {
+					<!--remover un objeto hijo correspondiente al ultimo elemento del objeto lista 
+					objLista.removeChild( objLista.lastElementChild );
+				}
+
+			}
+		</script>
+	  
+	</body>
+</html>

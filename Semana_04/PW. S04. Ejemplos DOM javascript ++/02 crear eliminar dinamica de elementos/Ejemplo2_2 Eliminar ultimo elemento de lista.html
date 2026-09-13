@@ -1,0 +1,17 @@
+<button onclick="eliminar()">Eliminar Último</button>
+
+<ul id="lista">
+    <li>Elemento 1</li>
+    <li>Elemento 2</li>
+    <li>Elemento 3</li>
+</ul>
+
+<script>
+function eliminar(){
+    const lista = document.getElementById("lista");
+
+    if(lista.lastElementChild){
+        lista.removeChild(lista.lastElementChild);
+    }
+}
+</script>

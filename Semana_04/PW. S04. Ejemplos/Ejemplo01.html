@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista dinámica</title>
+</head>
+<body>
+  <h1>Lista de tareas</h1>
+
+  <input id="tarea" type="text" placeholder="Escribe una tarea">
+  <button id="agregar">Agregar</button>
+
+  <ul id="lista"></ul>
+
+  <script>
+    const entrada = document.querySelector("#tarea");
+    const boton = document.querySelector("#agregar");
+    const lista = document.querySelector("#lista");
+
+    function agregarTarea() {
+      const texto = entrada.value.trim();
+
+      if (texto === "") {
+        alert("Escribe una tarea.");
+        return;
+      }
+
+      const li = document.createElement("li");
+      const textoTarea = document.createElement("span");
+      const borrar = document.createElement("button");
+
+      textoTarea.textContent = texto;
+      borrar.textContent = "Borrar";
+
+      borrar.addEventListener("click", () => {
+        li.remove();
+      });
+
+      li.append(textoTarea, " ", borrar);
+      lista.appendChild(li);
+
+      entrada.value = "";
+      entrada.focus();
+    }
+
+    boton.addEventListener("click", agregarTarea);
+
+    entrada.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        agregarTarea();
+      }
+    });
+  </script>
+</body>
+</html>

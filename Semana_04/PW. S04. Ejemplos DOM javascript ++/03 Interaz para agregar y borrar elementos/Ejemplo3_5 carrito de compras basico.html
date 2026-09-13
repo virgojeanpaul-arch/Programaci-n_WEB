@@ -1,0 +1,20 @@
+<input id="producto">
+<button onclick="agregarProducto()">Agregar</button>
+
+<ul id="carrito"></ul>
+
+<script>
+function agregarProducto(){
+
+    const li = document.createElement("li");
+
+    li.innerHTML = `
+        ${producto.value}
+        <button onclick="this.parentElement.remove()">
+            Quitar
+        </button>
+    `;
+
+    carrito.appendChild(li);
+}
+</script>

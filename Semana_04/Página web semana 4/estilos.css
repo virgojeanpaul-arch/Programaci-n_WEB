@@ -1,0 +1,89 @@
+.titulo{
+    background-color: turquoise;
+    color: blue;
+    font-family: Arial;
+    font-size: 30px;
+}
+
+.logo{
+    width: 120px;
+    height: 120px;
+    border-radius: 25px;
+    border: 5px solid black;
+}
+
+.portada{
+    width: 100%;
+    height: 550px;
+}
+
+body{
+    border: 0;
+    margin: 0;
+    background-color: rgba(255, 255, 0, 0.543);
+}
+
+.ejercicios{
+    border: 35px;
+    margin: 25px;
+}
+
+.boton{
+    border-radius: 25px;
+    background-color: chartreuse;
+    font-size: 20px;   
+}
+
+.boton:hover{
+    background-color: green;
+    color: beige;
+}
+
+.imagenes{
+    background-color: brown;
+}
+
+.imagen1{
+    width: 350px;
+    height: 350px;
+    border-radius: 30px;
+    border: 4px solid goldenrod;
+    transition: 3s ease;
+}
+
+.imagen1:hover{
+    width: 550px;
+    height: 550px;
+}
+
+.item {
+    display: inline-block;
+    margin: 10px;
+}
+
+.item p {
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+
+footer{
+    background-color: rgba(255, 255, 0, 0.474);
+}
+
+
+
+
+.imagen2{
+    width: 350px;
+    height: 350px;
+    border-radius: 30px;
+    border: 4px solid goldenrod;
+    transition: 3s ease;
+}
+
+.imagen2:hover{
+    transform: scale(1.2) rotate(10deg);
+    width: 550px;
+    height: 550px;
+}

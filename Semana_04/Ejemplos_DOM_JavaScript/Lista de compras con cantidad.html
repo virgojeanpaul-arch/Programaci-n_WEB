@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<body>
+	<h2>Lista de compras</h2>
+	<input id="articulo" placeholder="Artículo">
+	<input id="cantidad" type="number" min="1" placeholder="Cantidad">
+	<select id="unidad">
+	<option>unidad</option>
+	<option>kg</option>
+	<option>litro</option>
+	</select>
+	<button id="agregar">Agregar</button>
+	<ul id="lista"></ul>
+	<script>
+	document.getElementById("agregar").addEventListener("click", function () {
+	const articulo = document.getElementById("articulo").value.trim();
+	const cantidad = Number(document.getElementById("cantidad").value);
+	const unidad = document.getElementById("unidad").value;
+	if (!articulo || cantidad < 1) return;
+	const li = document.createElement("li");
+	li.textContent = `${articulo} - ${cantidad} ${unidad} `;
+	const btn = document.createElement("button");
+	btn.textContent = "Eliminar";
+	btn.onclick = () => li.remove();
+	li.appendChild(btn);
+	document.getElementById("lista").appendChild(li);
+	});
+	</script>
+	</body>
+</html>

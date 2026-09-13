@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<body>
+	<h1>Detalle de producto</h1>
+	<select id="producto">
+		<option value="">Seleccione...</option>
+		<option value="laptop">Laptop</option>
+		<option value="mouse">Mouse</option>
+	</select>
+	<section id="detalle"></section>
+	
+	<script>
+	const datos = {
+		laptop: { nombre: "Laptop", precio: 2500, stock: 8,
+			descripcion: "Equipo portátil para trabajo y estudio." },
+		mouse: { nombre: "Mouse", precio: 60, stock: 25,
+			descripcion: "Mouse óptico para uso diario." }
+	};
+	
+	document.getElementById("producto").addEventListener("change", e => {
+		const d = datos[e.target.value];
+		detalle = document.getElementById("detalle");
+		detalle.replaceChildren();
+		
+		if (!d) return;
+	
+		const h2 = document.createElement("h2");
+		const p = document.createElement("p");
+		const stock = document.createElement("p");
+		
+		h2.textContent = d.nombre;
+		p.textContent = `Precio: S/ ${d.precio.toFixed(2)} | ${d.descripcion}`;
+		stock.textContent = `Stock disponible: ${d.stock}`;
+		
+		detalle.append(h2, p, stock);
+	});
+	</script>
+	</body>
+</html>

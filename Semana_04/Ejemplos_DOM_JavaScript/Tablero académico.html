@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<body>
+	<h1>Tablero académico</h1>
+	<button id="nuevo">Agregar mensaje</button>
+	<section id="panel"></section>
+	<script>
+	document.getElementById("nuevo").onclick = () => {
+		const article = document.createElement("article");
+		const h2 = document.createElement("h2");
+		const p = document.createElement("p");
+		const b = document.createElement("button");
+		
+		h2.textContent = "Nuevo aviso";
+		p.textContent = "Mensaje generado dinámicamente mediante el DOM.";
+		b.textContent = "Eliminar";
+		b.onclick = () => article.remove();
+		
+		article.append(h2, p, b);
+		document.getElementById("panel").appendChild(article);
+	};
+	</script>
+	</body>
+</html>

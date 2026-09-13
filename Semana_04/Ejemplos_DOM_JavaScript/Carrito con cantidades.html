@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<body>
+	<h1>Carrito</h1>
+	<select id="producto">
+		<option value="Laptop|2500">Laptop</option>
+		<option value="Mouse|60">Mouse</option>
+		<option value="Teclado|120">Teclado</option>
+	</select>
+	<input id="cantidad" type="number" min="1" value="1">
+	<button id="agregar">Agregar</button>
+	<ul id="carrito"></ul>
+	<p>Total: S/ <span id="total">0.00</span></p>
+	<script>
+	const carrito = [];
+	function render() {
+		const ul = document.getElementById("carrito");
+		ul.replaceChildren();
+		let total = 0;
+		carrito.forEach((x, i) => {
+		const li = document.createElement("li");
+		const subtotal = x.precio * x.cantidad;
+		total += subtotal;
+		li.textContent = `${x.nombre} x${x.cantidad} = S/ ${subtotal.toFixed(2)} `;
+		const b = document.createElement("button");
+		b.textContent = "Quitar";
+		b.onclick = () => { carrito.splice(i, 1); render(); };
+		li.appendChild(b);
+		ul.appendChild(li);
+		});
+		document.getElementById("total").textContent = total.toFixed(2);
+	}
+	
+	document.getElementById("agregar").onclick = () => {
+		const [nombre, precio] = document.getElementById("producto").value.split("|");
+		const cantidad = Number(document.getElementById("cantidad").value);
+		carrito.push({nombre, precio: Number(precio), cantidad});
+		render();
+	};
+	</script>
+	</body>
+</html>

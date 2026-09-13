@@ -1,0 +1,16 @@
+<input type="text" id="tarea">
+<button onclick="agregar()">Agregar</button>
+
+<ul id="lista"></ul>
+
+<script>
+function agregar(){
+
+    const texto = document.getElementById("tarea").value;
+
+    const li = document.createElement("li");
+    li.textContent = texto;
+
+    document.getElementById("lista").appendChild(li);
+}
+</script>

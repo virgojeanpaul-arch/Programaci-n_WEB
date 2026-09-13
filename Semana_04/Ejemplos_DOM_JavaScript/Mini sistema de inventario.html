@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<body>
+	<h1>Inventario</h1>
+	<input id="nombre" placeholder="Producto">
+	<input id="cantidad" type="number" min="1" placeholder="Cantidad">
+	<button id="agregar">Agregar</button>
+	<input id="buscar" placeholder="Buscar">
+	<ul id="lista"></ul>
+	<script>
+	const datos = [];
+	const lista = document.getElementById("lista");
+	
+	function render() {
+		lista.replaceChildren();
+		const q = document.getElementById("buscar").value.toLowerCase();
+		datos.filter(x => x.nombre.toLowerCase().includes(q)).forEach(x => {
+			const li = document.createElement("li");
+			li.textContent = `${x.nombre} - stock: ${x.cantidad} `;
+			const btn = document.createElement("button");
+			btn.textContent = "Eliminar";
+			btn.onclick = () => {
+				const i = datos.indexOf(x);
+				datos.splice(i, 1);
+				render();
+			};
+			li.appendChild(btn);
+			lista.appendChild(li);
+		});
+	}
+	
+	document.getElementById("agregar").onclick = () => {
+		const nombre = document.getElementById("nombre").value.trim();
+		const cantidad = Number(document.getElementById("cantidad").value);
+		if (!nombre || cantidad < 1) return;
+		datos.push({nombre, cantidad});
+		render();
+	};
+	
+	document.getElementById("buscar").oninput = render;
+	</script>
+	</body>
+</html>

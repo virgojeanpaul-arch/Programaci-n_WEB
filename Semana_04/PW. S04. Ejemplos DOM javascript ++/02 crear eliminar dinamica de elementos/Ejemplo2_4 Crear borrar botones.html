@@ -1,0 +1,17 @@
+<button onclick="agregarBoton()">Crear Botón</button>
+<div id="zona"></div>
+
+<script>
+function agregarBoton(){
+
+    const btn = document.createElement("button");
+
+    btn.textContent = "Eliminarme";
+
+    btn.onclick = function(){
+        btn.remove();
+    };
+
+    document.getElementById("zona").appendChild(btn);
+}
+</script>
